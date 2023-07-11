@@ -53,6 +53,7 @@ export class App extends Component {
 
   componentDidMount() {
     const storedContacts = JSON.parse(localStorage.getItem('contacts'));
+    if (storedContacts === null) return;
     this.setState(prevState => ({
       ...prevState,
       contacts: storedContacts,
