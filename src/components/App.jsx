@@ -39,10 +39,10 @@ export class App extends Component {
     }));
   };
 
-  handleRemoveContact = itemName => {
+  handleRemoveContact = contactId => {
     this.setState(prevState => ({
-      contacts: this.state.contacts.filter(({ name }) => {
-        return name !== itemName;
+      contacts: this.state.contacts.filter(({ id }) => {
+        return id !== contactId;
       }),
     }));
   };

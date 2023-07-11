@@ -9,9 +9,9 @@ export class ContactList extends Component {
 
   handleRemoveContact = e => {
     const { onRemoveContact } = this.props;
-    const { name } = e.currentTarget.dataset;
+    const { id } = e.currentTarget.dataset;
 
-    onRemoveContact(name);
+    onRemoveContact(id);
   };
 
   render() {
@@ -31,7 +31,7 @@ export class ContactList extends Component {
                 <span className={styles['phone-number']}>{number}</span>
                 <button
                   className={styles.btn}
-                  data-name={name}
+                  data-id={id}
                   onClick={this.handleRemoveContact}
                 ></button>
               </li>
