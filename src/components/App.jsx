@@ -47,6 +47,18 @@ export class App extends Component {
     }));
   };
 
+  componentDidUpdate() {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+
+  componentDidMount() {
+    const storedContacts = JSON.parse(localStorage.getItem('contacts'));
+    this.setState(prevState => ({
+      ...prevState,
+      contacts: storedContacts,
+    }));
+  }
+
   render() {
     return (
       <div className="wrapper">
